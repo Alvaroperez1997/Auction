@@ -101,4 +101,19 @@ public class Auction
             return null;
         }
     }
+    
+    public void close() {
+        int index = 0;
+        for (Lot lot : lots) {
+            if (lot.getHighestBid() == null) {
+                System.out.println( "No se ha hecho ninguna puja sobre : "+ lot.getDescription());
+            }
+            else {
+                System.out.println(lots.get(index).getHighestBid().getBidder().getName() + " ha pujado : " + lots.get(index).getHighestBid() 
+                + " por " + lot.getDescription());
+                index++;
+            }
+        }
+            //System.out.println(lots.get(0).getHighestBid().getBidder().getName());
+    }
 }
